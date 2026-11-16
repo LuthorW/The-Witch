@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="loja.css">
 </head>
 <body class="gallery-page">
   <canvas id="dust-canvas" aria-hidden="true"></canvas>
@@ -20,7 +21,16 @@
       <span class="brand-mark corporate-mark"><img src="luthor-symbol.png" alt="" aria-hidden="true"></span>
       <span class="brand-copy"><strong>Luthor Corporation</strong><small>Historical Archives · Visual Collection</small></span>
     </a>
-    <div class="gallery-header-links"><a class="back-link" href="index.html">← Voltar ao arquivo</a><a class="back-link" href="livro.html">Comprar o livro →</a></div>
+    <div class="gallery-header-links"><a class="back-link" href="index.html">← Voltar ao arquivo</a><a class="back-link" href="catalogo.html">Catálogo →</a></div>
+    <div class="shop-actions">
+      <a class="shop-icon" href="perfil.html" aria-label="Seu perfil">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+      </a>
+      <a class="shop-icon" href="carrinho.html" data-cart-link aria-label="Carrinho">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h3l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.8a1.5 1.5 0 0 0 1.5-1.1L21 7H6"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/></svg>
+        <span class="shop-badge" data-cart-count hidden>0</span>
+      </a>
+    </div>
   </header>
 
   <main class="gallery-main">
@@ -46,6 +56,7 @@
     <a href="index.html">Retornar ao dossiê</a>
   </footer>
 
+  <script src="loja.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>

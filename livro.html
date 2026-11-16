@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="loja.css">
 </head>
 <body class="book-page">
   <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
@@ -33,7 +34,17 @@
       <a href="#edicoes">Edições</a>
       <a href="#trecho">Trecho</a>
       <a href="#comprar">Comprar</a>
+      <a href="catalogo.html">Catálogo</a>
     </nav>
+    <div class="shop-actions">
+      <a class="shop-icon" href="perfil.html" aria-label="Seu perfil">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+      </a>
+      <a class="shop-icon" href="carrinho.html" data-cart-link aria-label="Carrinho">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h3l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.8a1.5 1.5 0 0 0 1.5-1.1L21 7H6"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/></svg>
+        <span class="shop-badge" data-cart-count hidden>0</span>
+      </a>
+    </div>
   </header>
 
   <main>
@@ -154,7 +165,7 @@
       <div class="checkout-copy">
         <p class="section-label">Adquira um exemplar</p>
         <h2>Leve o arquivo para a sua estante.</h2>
-        <p>Escolha a edição e a quantidade. O fluxo abaixo representa a boutique editorial da Luthor Corporation Editions; nesta versão estática, nenhuma cobrança real é efetuada.</p>
+        <p>Escolha a edição e a quantidade. O livro vai para o carrinho da boutique da Luthor Corporation Editions, onde você informa o endereço de envio; nesta versão estática, nenhuma cobrança real é efetuada.</p>
         <div class="checkout-guarantees">
           <span>Embalagem de arquivo</span>
           <span>Envio rastreável</span>
@@ -184,7 +195,8 @@
           <div><span>Envio</span><strong>calculado no checkout</strong></div>
           <div class="order-total"><span>Total do livro</span><strong id="book-total">€ 34,90</strong></div>
         </div>
-        <button class="button button-primary checkout-button" type="submit">Finalizar pedido</button>
+        <button class="button button-primary checkout-button" type="submit">Adicionar ao carrinho</button>
+        <div class="checkout-links"><a href="carrinho.html">Ver carrinho</a><a href="catalogo.html">Outros livros do catálogo</a></div>
         <div class="order-confirmation" id="order-confirmation" hidden></div>
       </form>
     </section>
@@ -198,6 +210,7 @@
     <a href="index.html">Voltar ao arquivo</a>
   </footer>
 
+  <script src="loja.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>

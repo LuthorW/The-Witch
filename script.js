@@ -221,13 +221,17 @@ if (bookOrderForm) {
   updateBookOrder();
   bookOrderForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    const reference = `LL-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
-    const edition = bookEditionSelect?.value || 'Edição';
-    const quantity = bookQuantityInput?.value || '1';
+    const edition = bookEditionSelect?.value || 'Capa dura';
+    const quantity = Math.max(1, Math.min(9, Number(bookQuantityInput?.value) || 1));
+    const editionIds = { Brochura: 'brochura', 'Capa dura': 'capa-dura', Colecionador: 'colecionador' };
+
+    if (window.Loja) {
+      window.Loja.addToCart('the-witch', editionIds[edition] || 'capa-dura', quantity);
+    }
 
     if (orderConfirmation) {
       orderConfirmation.hidden = false;
-      orderConfirmation.innerHTML = `<strong>Sendo redirecionado para a página de checkout...</strong><br>Referência ${reference} · ${quantity} × ${edition}.`;
+      orderConfirmation.innerHTML = `<strong>${quantity} × The Witch (${edition}) no carrinho.</strong><br><a href="carrinho.html">Finalizar compra →</a>`;
     }
   });
 }
